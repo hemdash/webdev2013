@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body,td,th {background-color: #FCF; background-image:url(images/background.jpg); background-attachment:fixed; background-repeat:repeat; background-position:top left; font-family:Arial, Helvetica, sans-serif; color:#000;}
+
+h1 {font-family:Arial, Helvetica, sans-serif; font-size:xlarge; color:#000}
+
+ul {list-style-image: url(smiley.jpg)}
+
+table, td, th {border: 2px solid blue; border-collapse: collapse; background-color: aqua; padding: 10px;
+}
+
+.nav {background-color: #fff; float: left; width: 200px; margin:10px; z-index: 2; padding: 5px;}
+/*this is for the rollover buttons*/
+.img {float: right;}
+/*this is for the ikea monkey*/
+.bar {z-index:3; position: relative; top:-100px; left:-100px;
+}
+/*this is for the "this is the third div class" text in every page...the positioning will actually position the text off the page so the viewer will never see it */
+
+#webdev {background-color:#FFF; opacity:.75; float:left; width:200px; margin:100px; padding:25px; border-style:solid; border-width:3px; border-color:#000;}
+
+#database {background-color:#FFF; opacity:.75; float:right; width:200px; padding:25px; margin-right:100px; margin-top:100px; margin-bottom:100px; border-style:solid; border-width:3px; border-color:#000;}
+
+#something {background color="black"; color="red"}
+/*this is for the "this" in "this is a third div class*/

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hayley's Blackjack Game</title>
+
+
+<html>
+
+<head>
+
+<title>Blackjack Javascript Example</title>
+<script type="text/javascript">
+var count = 0;
+var cardOnePoints;
+var cardTwoPoints;
+
+function dealHand() {
+var randomCardOne = Math.floor ((Math.random() *13) +2);
+var randomCardTwo = Math.floor ((Math.random() *13) +2);
+	if (randomCardOne === randomCardTwo)	{identicalCards()};
+var cardOne = document.getElementById("cardOne").src=randomCardOne + "hearts.bmp";
+var cardTwo = document.getElementById("cardTwo").src=randomCardTwo + "hearts.bmp";
+
+
+	if (randomCardOne>11)	{cardOnePoints = 10
+		}
+	else {cardOnePoints = randomCardOne};
+
+	if (randomCardTwo>11)	{cardTwoPoints = 10
+		}
+	else if (randomCardOne===11 && randomCardTwo===11) {cardTwoPoints = 1}
+	else {cardTwoPoints = randomCardTwo};
+var scorePrintOne = document.getElementById("scoreOne").value=cardOnePoints;
+var scorePrintTwo = document.getElementById("scoreTwo").value=cardTwoPoints;
+var totalScore = document.getElementById("scoreTotal").value=cardOnePoints + cardTwoPoints;
+	if (cardOnePoints + cardTwoPoints === 21)
+	{setTimeout(function()
+	{window.open("winner.html", "", "height=200, width=300", "")}, 2000)};
+	
+	document.getElementById("counter").value=++count;
+	calculateWinnerCount();
+} 
+
+var identicalPairs = 0;
+function identicalCards(){
+	document.getElementById("identical").value=++identicalPairs;
+}
+
+function getCookieOne(c_name)
+{
+   var i,x,y,ARRcookies=document.cookie.split(";");
+   for (i=0;i<ARRcookies.length;i++) {
+     x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+     y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+     x=x.replace(/^\s+|\s+$/g,"");
+     if (x==c_name)
+     {
+        return unescape(y);
+     }
+  }
+}
+
+function setCookieOne(c_name,value,exdays) {
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate() + exdays);
+  var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+  document.cookie=c_name + "=" + c_value;
+} 
+
+var winnerCount = getCookieOne('gamesWonCount') || 0;
+
+function calculateWinnerCount() {
+  if (cardOnePoints + cardTwoPoints === 21) {
+    winnerCount = parseInt(winnerCount,10) + 1;
+	setCookieOne("gamesWonCount", winnerCount, 365);
+  }
+}
+
+function checkCookie()
+{
+  var username=getCookieOne("username");
+
+  if (username!=null && username!="") {
+    alert("Sup " + username+ "!!! Woah man, you've won "
+        + parseInt(winnerCount) + " game(s)!!!"
+        );
+  } else {
+    username=prompt("Please enter your name:","");
+    if (username!=null && username!="") {
+     setCookieOne("username",username,365);
+    }
+  }
+}
+
+
+</script>
+
+
+
+</head>
+
+
+
+<body onload="checkCookie()">
+
+<h1>Hayley Munguia's Blackjack Program</h1>
+
+
+<table>
+
+<tr>
+  <td> <img border=0 src="cardback.bmp" id="cardOne" height=135 width=95>
+
+  <td> <img border=0 src="cardback.bmp" id="cardTwo"  height=135 width=95>
+  
+  <td><input type="button" onclick="dealHand();" value="Deal, yo." /></td>
+
+<tr>
+
+  <td> <B>Card One:</B><BR>
+
+       <input TYPE="TEXT" SIZE=10 NAME="player" id="scoreOne"></td>
+       
+  <td> <B>Card Two:</B><BR>
+
+       <input TYPE="TEXT" SIZE=10 NAME="player" id="scoreTwo"></td>
+
+  <td> <B>Total:</B><BR>
+
+       <input TYPE="TEXT" SIZE=10 NAME="result" id="scoreTotal" /></td>
+  <td> <b>Hands so far:</b><br />
+  		<input type="text" size=10 id="counter" /></td>
+  <td> <b>Identical Pairs:</b><br />
+  		<input type="text" size=10 id="identical" /></td>
+
+</tr>
+
+</table>
+
+</form>
+
+
+</body>
+
+</html>
+
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Css for my wonderful
+
+
+  homepage   */
+  
+  div.container {
+	  width:100%;
+	  margin:0px;
+	  border:1px solid red;
+	  line-height: 150%;
+	  
+	  
+	 
+  } /* end div.container */
+  
+  div.header, div.footer {
+	  
+	  padding: 0.5em;
+	  color:white;
+	  background-color: red;
+	  clear: both;
+	  
+	  
+	  
+  } /*end div.header, footer */
+  
+  div.nav {
+	  float: left;
+	  width; 200px;
+	  margin:0;
+	  padding:1em;
+  }
+  
+  div.content {
+	  margin-left: 225px;
+	  border-left: 1px solid red;
+	  padding:1ex;
+	  clear_right;
+  }

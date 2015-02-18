@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Homework 1</title>
+</head>
+
+<body>
+python<br />
+import random<br />
+# Choosing how many of each color there will be<br />
+yellow = random.randrange(10,15)<br />
+blue = random.randrange(1,10)<br />
+white = random.randrange(6,15)<br />
+green = random.randrange(10,25)<br />
+black = random.randrange(1,12)<br />
+purple = random.randrange(5,10)<br />
+silver = random.randrange(4,6)<br />
+cyan = random.randrange(5,12)<br />
+magenta = random.randrange(0,10)<br />
+red = 1<br />
+# Actually producing the proper amount of each color<br />
+a = [1,yellow]<br />
+A = [a[0]] * a[1]<br />
+b = [2,blue]<br />
+B = [b[0]] * b[1]<br />
+c = [3,white]<br />
+C = [c[0]] * c[1]<br />
+d = [4,green]<br />
+D = [d[0]] * d[1]<br />
+e = [5,black]<br />
+E = [e[0]] * e[1]<br />
+f = [6,purple]<br />
+F = [f[0]] * f[1]<br />
+g = [7,silver]<br />
+G = [g[0]] * g[1]<br />
+h = [8,cyan]<br />
+H = [h[0]] * h[1]<br />
+i = [9,magenta]<br />
+I = [i[0]] * i[1]<br />
+j = [10,red]<br />
+J = [j[0]] * j[1]<br />
+# Combining all of these gum balls into one list<br />
+total = A + B + C + D + E + F + G + H + I + J<br />
+# Randomly choosing each gum ball one at a time until red (or 10) is chosen:<br />
+random.shuffle(total)<br />
+random_selection = total[ :total.index(10) + 1 ]<br />
+# Assigning the numbers with actual colors<br />
+d = {1: 'yellow', 2: 'blue', 3: 'white', 4: 'green', 5: 'black', 6: 'purple', 7: 'silver', 8: 'cyan', 9: 'magenta', 10: 'red'}<br />
+# When a number is chosen, it will transform into its coordinating color<br />
+random_selection = [d[k] for k in random_selection]<br />
+for arandom_selection in random_selection:<br />
+	print(arandom_selection)<br />
+<br />
+# Figuring out the colors that occurred the most often<br />
+from itertools import groupby<br />
+from collections import Counter<br />
+freqs = groupby (Counter(random_selection).most_common(), lambda x:x[1])<br />
+<br />
+<br />
+print'''Welcome to Hayley Munguia's Gum Ball Machine Simulation<br />
+You are starting with the following gum balls:<br />
+Yellow: ''' + str(len(A))<br />
+print"Blue: " + str(len(B))<br />
+print"White: " + str(len(C))<br />
+print"Green: " + str(len(D))<br />
+print"Black: " + str(len(E))<br />
+print"Purple: " + str(len(F))<br />
+print"Silver: " + str(len(G))<br />
+print"Cyan: " + str(len(H))<br />
+print"Magenta: " + str(len(I))<br />
+print" and Red: " + str(len(J))<br />
+print"Here are your random purchases:"<br />
+for arandom_selection in random_selection:<br />
+	print(arandom_selection)<br />
+<br />
+print"Number of gum balls purchased: " + str(len(random_selection))<br />
+print"For a total of: $" + str(len(random_selection)*.25)<br />
+print"The color(s) purchased most often: " + str([val for val, count in freqs.next()[1]])<br />
+
+</body>
+</html>

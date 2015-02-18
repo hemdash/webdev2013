@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<script>
+
+function dealCard()	{
+	var cards = ['2hearts.bmp', '3hearts.bmp', '4hearts.bmp', '5hearts.bmp', '6hearts.bmp', '7hearts.bmp', '8hearts.bmp', '9hearts.bmp', '10hearts.bmp', '11hearts.bmp', '12hearts.bmp', '13hearts.bmp', '14hearts.bmp'];
+	var rand = cards[Math.round(Math.random()*cards.length - 1)];
+	document.getElementById('card').innerHTML = '<img src="' + rand + '">');
+}
+
+
+</script>
+</head>
+
+<body onload="dealCard()">
+<div id="card">
+<img src="cardback.bmp" width="95" height="135" />
+</div>
+
+</body>
+</html>

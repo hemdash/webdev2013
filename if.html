@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+
+function if_fun()	{
+	
+	//generate a random score 1-100
+	
+	var score = Math.floor( Math.random() * 100 ) + 1;
+	
+	if (score >= 90) {
+			grade = "A";
+	}
+	else
+		if (score >= 80) {
+			grade = "B";
+		} //scpre between 80 and 90
+		else
+			grade = "Sub B"
+}
+	document.open();
+	document.write("<h1>IF statements</h1>");
+	
+	document.write("Your test score was " + score);
+	
+	
+	document.close();
+	
+} //end function variable_fun
+
+</script>
+</head>
+
+<body onload="if_fun()">
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<script src="AY3.js" type="text/javascript"></script>
+
+<script type="text/javascript>
+
+function changeTheElements() {
+	var div = document.getElementById("div_demo1");
+		div = document.style.backgroundColor = "#44f";
+		div.style.width="200px";
+		div.style.color="#fff";
+		div.style.height="200px";
+		div.style.fontFamily="Verdana, Helvetica, Arial";
+	alert("changeTheElements");
+	
+} //changeTheElements
+
+</script>
+
+</head>
+
+<body onload="changeTheElements()">
+
+<h2 id="helloworld">original h2 tag</h2>
+
+<h2>h2 — no class</h2>
+
+<div id="div_demo1">
+
+<noscript>I can still get it to say hello
+</body>
+</html>
